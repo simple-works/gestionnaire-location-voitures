@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0f82c4708eb6429b8d2d8d459c873933" Name="Diagram1">
+        <EntityTypeShape EntityType="RCD_System_Database_Model.Client" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCD_System_Database_Model.Contrat" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCD_System_Database_Model.Employe" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCD_System_Database_Model.Reservation" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCD_System_Database_Model.Utilisateur" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCD_System_Database_Model.Vehicule" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Contrat__id_clie__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Contrat__id_clie__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Reservati__id_cl__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Reservati__id_cl__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Contrat__id_empl__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Contrat__immatri__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Reservati__id_em__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="RCD_System_Database_Model.FK__Reservati__immat__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

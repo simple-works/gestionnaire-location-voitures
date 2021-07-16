@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Car_Express_Database_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="id_client_pk" />
+          </Key>
+          <Property Name="id_client_pk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photo_client" Type="image" />
+          <Property Name="nom_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prenom_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nationalite_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_naissance_client" Type="date" />
+          <Property Name="lieu_naissance_client" Type="varchar" MaxLength="50" />
+          <Property Name="adresse_domicile_client" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ville_domicile_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="code_postal_domicile_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="adresse_residence_client" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ville_residence_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="code_postal_residence_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telephone_portable_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telephone_fixe_client" Type="varchar" MaxLength="50" />
+          <Property Name="fax_client" Type="varchar" MaxLength="50" />
+          <Property Name="email_client" Type="varchar" MaxLength="50" />
+          <Property Name="type_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_national_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="type_id_national_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_heure_delivraison_id_national_client" Type="datetime" Nullable="false" />
+          <Property Name="lieu_delivraison_id_national_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_permis_conduire_client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_heure_delivraison_permis_client" Type="datetime" Nullable="false" />
+          <Property Name="lieu_delivraison_permis_Client" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="_row_insert_datetime" Type="datetime" Nullable="false" />
+          <Property Name="_row_update_datetime" Type="datetime" />
+          <Property Name="_row_delete_datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="contrat">
+          <Key>
+            <PropertyRef Name="id_contrat_pk" />
+          </Key>
+          <Property Name="id_contrat_pk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_client_fk" Type="int" />
+          <Property Name="immatriculation_vehicule_fk" Type="varchar" MaxLength="50" />
+          <Property Name="id_client_compagnon_fk" Type="int" />
+          <Property Name="id_employe_conducteur_fk" Type="int" />
+          <Property Name="description_equipements_speciaux_contrat" Type="varchar" MaxLength="100" />
+          <Property Name="date_heure_depart_vehicule_contrat" Type="datetime" Nullable="false" />
+          <Property Name="date_heure_retour_vehicule_contrat" Type="datetime" Nullable="false" />
+          <Property Name="lieu_depart_vehicule_contrat" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="lieu_retour_vehicule_contrat" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="frais_conducteur_contrat" Type="money" Nullable="false" />
+          <Property Name="frais_equipements_speciaux_contrat" Type="money" Nullable="false" />
+          <Property Name="montant_forfait_contrat" Type="money" Nullable="false" />
+          <Property Name="montant_remise_contrat" Type="money" Nullable="false" />
+          <Property Name="mode_paiement_contrat" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="_row_insert_datetime" Type="datetime" Nullable="false" />
+          <Property Name="_row_update_datetime" Type="datetime" />
+          <Property Name="_row_delete_datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="employe">
+          <Key>
+            <PropertyRef Name="id_employe_pk" />
+          </Key>
+          <Property Name="id_employe_pk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photo_employe" Type="image" />
+          <Property Name="nom_employe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prenom_employe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nationalite_employe" Type="varchar" MaxLength="50" />
+          <Property Name="date_naissance_employe" Type="date" />
+          <Property Name="lieu_naissance_employe" Type="varchar" MaxLength="50" />
+          <Property Name="adresse_domicile_employe" Type="varchar" MaxLength="100" />
+          <Property Name="ville_domicile_employe" Type="varchar" MaxLength="50" />
+          <Property Name="code_postal_domicile_employe" Type="varchar" MaxLength="50" />
+          <Property Name="telephone_portable_employe" Type="varchar" MaxLength="50" />
+          <Property Name="telephone_fixe_employe" Type="varchar" MaxLength="50" />
+          <Property Name="fax_employe" Type="varchar" MaxLength="50" />
+          <Property Name="email_employe" Type="varchar" MaxLength="50" />
+          <Property Name="date_embauche_employe" Type="date" />
+          <Property Name="fonction_employe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="_row_insert_datetime" Type="datetime" Nullable="false" />
+          <Property Name="_row_update_datetime" Type="datetime" />
+          <Property Name="_row_delete_datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="id_reservation_pk" />
+          </Key>
+          <Property Name="id_reservation_pk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_client_fk" Type="int" />
+          <Property Name="immatriculation_vehicule_fk" Type="varchar" MaxLength="50" />
+          <Property Name="id_client_compagnon_fk" Type="int" />
+          <Property Name="id_employe_conducteur_fk" Type="int" />
+          <Property Name="description_equipements_speciaux_reservation" Type="varchar" MaxLength="100" />
+          <Property Name="date_heure_depart_vehicule_reservation" Type="datetime" Nullable="false" />
+          <Property Name="date_heure_retour_vehicule_reservation" Type="datetime" />
+          <Property Name="lieu_depart_vehicule_reservation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="lieu_retour_vehicule_reservation" Type="varchar" MaxLength="100" />
+          <Property Name="frais_conducteur_reservation" Type="money" Nullable="false" />
+          <Property Name="frais_equipements_speciaux_reservation" Type="money" Nullable="false" />
+          <Property Name="montant_forfait_reservation" Type="money" Nullable="false" />
+          <Property Name="montant_remise_reservation" Type="money" Nullable="false" />
+          <Property Name="mode_paiement_reservation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="_row_insert_datetime" Type="datetime" Nullable="false" />
+          <Property Name="_row_update_datetime" Type="datetime" />
+          <Property Name="_row_delete_datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="utilisateur">
+          <Key>
+            <PropertyRef Name="nom_utilisateur_pk" />
+          </Key>
+          <Property Name="nom_utilisateur_pk" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mot_passe_utilisateur" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role_utilisateur" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_employe_fk" Type="int" />
+          <Property Name="date_heure_derniere_connexion_utilisateur" Type="datetime" />
+          <Property Name="_row_insert_datetime" Type="datetime" Nullable="false" />
+          <Property Name="_row_update_datetime" Type="datetime" />
+          <Property Name="_row_delete_datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="vehicule">
+          <Key>
+            <PropertyRef Name="immatriculation_vehicule_pk" />
+          </Key>
+          <Property Name="immatriculation_vehicule_pk" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="photo_vehicule" Type="image" />
+          <Property Name="type_vehicule" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="marque_vehicule" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description_vehicule" Type="varchar" MaxLength="100" />
+          <Property Name="distance_parcourue_vehicule" Type="float" Nullable="false" />
+          <Property Name="type_energie_vehicule" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="quantite_energie_vehicule" Type="float" Nullable="false" />
+          <Property Name="prix_location_vehicule" Type="money" Nullable="false" />
+          <Property Name="date_achat_vehicule" Type="date" />
+          <Property Name="date_derniere_maintenance_vehicule" Type="date" />
+          <Property Name="_row_insert_datetime" Type="datetime" Nullable="false" />
+          <Property Name="_row_update_datetime" Type="datetime" />
+          <Property Name="_row_delete_datetime" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__contrat__id_clie__32E0915F">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="id_client_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contrat__id_clie__34C8D9D1">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="id_client_compagnon_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contrat__id_empl__35BCFE0A">
+          <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employe">
+              <PropertyRef Name="id_employe_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="id_employe_conducteur_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contrat__immatri__33D4B598">
+          <End Role="vehicule" Type="Self.vehicule" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicule">
+              <PropertyRef Name="immatriculation_vehicule_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="immatriculation_vehicule_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__id_cl__412EB0B6">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="id_client_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__id_cl__4316F928">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="id_client_compagnon_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__id_em__440B1D61">
+          <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employe">
+              <PropertyRef Name="id_employe_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="id_employe_conducteur_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__immat__4222D4EF">
+          <End Role="vehicule" Type="Self.vehicule" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicule">
+              <PropertyRef Name="immatriculation_vehicule_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="immatriculation_vehicule_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__utilisate__id_em__267ABA7A">
+          <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
+          <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employe">
+              <PropertyRef Name="id_employe_pk" />
+            </Principal>
+            <Dependent Role="utilisateur">
+              <PropertyRef Name="id_employe_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Car_Express_Database_ModelStoreContainer">
+          <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contrat" EntityType="Self.contrat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employe" EntityType="Self.employe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="utilisateur" EntityType="Self.utilisateur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicule" EntityType="Self.vehicule" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__contrat__id_clie__32E0915F" Association="Self.FK__contrat__id_clie__32E0915F">
+            <End Role="client" EntitySet="client" />
+            <End Role="contrat" EntitySet="contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contrat__id_clie__34C8D9D1" Association="Self.FK__contrat__id_clie__34C8D9D1">
+            <End Role="client" EntitySet="client" />
+            <End Role="contrat" EntitySet="contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contrat__id_empl__35BCFE0A" Association="Self.FK__contrat__id_empl__35BCFE0A">
+            <End Role="employe" EntitySet="employe" />
+            <End Role="contrat" EntitySet="contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contrat__immatri__33D4B598" Association="Self.FK__contrat__immatri__33D4B598">
+            <End Role="vehicule" EntitySet="vehicule" />
+            <End Role="contrat" EntitySet="contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__id_cl__412EB0B6" Association="Self.FK__reservati__id_cl__412EB0B6">
+            <End Role="client" EntitySet="client" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__id_cl__4316F928" Association="Self.FK__reservati__id_cl__4316F928">
+            <End Role="client" EntitySet="client" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__id_em__440B1D61" Association="Self.FK__reservati__id_em__440B1D61">
+            <End Role="employe" EntitySet="employe" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__immat__4222D4EF" Association="Self.FK__reservati__immat__4222D4EF">
+            <End Role="vehicule" EntitySet="vehicule" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__utilisate__id_em__267ABA7A" Association="Self.FK__utilisate__id_em__267ABA7A">
+            <End Role="employe" EntitySet="employe" />
+            <End Role="utilisateur" EntitySet="utilisateur" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Car_Express_Database_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="id_client_pk" />
+          </Key>
+          <Property Name="id_client_pk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo_client" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="nom_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prenom_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationalite_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_naissance_client" Type="DateTime" Precision="0" />
+          <Property Name="lieu_naissance_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adresse_domicile_client" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ville_domicile_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="code_postal_domicile_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresse_residence_client" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ville_residence_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="code_postal_residence_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telephone_portable_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telephone_fixe_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fax_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="type_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_national_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type_id_national_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_heure_delivraison_id_national_client" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="lieu_delivraison_id_national_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_permis_conduire_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_heure_delivraison_permis_client" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="lieu_delivraison_permis_Client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="C_row_insert_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="C_row_update_datetime" Type="DateTime" Precision="3" />
+          <Property Name="C_row_delete_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="contrats" Relationship="Self.FK__contrat__id_clie__32E0915F" FromRole="client" ToRole="contrat" />
+          <NavigationProperty Name="contrats1" Relationship="Self.FK__contrat__id_clie__34C8D9D1" FromRole="client" ToRole="contrat" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__id_cl__412EB0B6" FromRole="client" ToRole="reservation" />
+          <NavigationProperty Name="reservations1" Relationship="Self.FK__reservati__id_cl__4316F928" FromRole="client" ToRole="reservation" />
+        </EntityType>
+        <EntityType Name="contrat">
+          <Key>
+            <PropertyRef Name="id_contrat_pk" />
+          </Key>
+          <Property Name="id_contrat_pk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_client_fk" Type="Int32" />
+          <Property Name="immatriculation_vehicule_fk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_client_compagnon_fk" Type="Int32" />
+          <Property Name="id_employe_conducteur_fk" Type="Int32" />
+          <Property Name="description_equipements_speciaux_contrat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="date_heure_depart_vehicule_contrat" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date_heure_retour_vehicule_contrat" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="lieu_depart_vehicule_contrat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu_retour_vehicule_contrat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="frais_conducteur_contrat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="frais_equipements_speciaux_contrat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="montant_forfait_contrat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="montant_remise_contrat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="mode_paiement_contrat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="C_row_insert_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="C_row_update_datetime" Type="DateTime" Precision="3" />
+          <Property Name="C_row_delete_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="client" Relationship="Self.FK__contrat__id_clie__32E0915F" FromRole="contrat" ToRole="client" />
+          <NavigationProperty Name="client1" Relationship="Self.FK__contrat__id_clie__34C8D9D1" FromRole="contrat" ToRole="client" />
+          <NavigationProperty Name="employe" Relationship="Self.FK__contrat__id_empl__35BCFE0A" FromRole="contrat" ToRole="employe" />
+          <NavigationProperty Name="vehicule" Relationship="Self.FK__contrat__immatri__33D4B598" FromRole="contrat" ToRole="vehicule" />
+        </EntityType>
+        <EntityType Name="employe">
+          <Key>
+            <PropertyRef Name="id_employe_pk" />
+          </Key>
+          <Property Name="id_employe_pk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo_employe" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="nom_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prenom_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationalite_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_naissance_employe" Type="DateTime" Precision="0" />
+          <Property Name="lieu_naissance_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adresse_domicile_employe" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ville_domicile_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="code_postal_domicile_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telephone_portable_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telephone_fixe_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fax_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_embauche_employe" Type="DateTime" Precision="0" />
+          <Property Name="fonction_employe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="C_row_insert_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="C_row_update_datetime" Type="DateTime" Precision="3" />
+          <Property Name="C_row_delete_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="contrats" Relationship="Self.FK__contrat__id_empl__35BCFE0A" FromRole="employe" ToRole="contrat" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__id_em__440B1D61" FromRole="employe" ToRole="reservation" />
+          <NavigationProperty Name="utilisateurs" Relationship="Self.FK__utilisate__id_em__267ABA7A" FromRole="employe" ToRole="utilisateur" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="id_reservation_pk" />
+          </Key>
+          <Property Name="id_reservation_pk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_client_fk" Type="Int32" />
+          <Property Name="immatriculation_vehicule_fk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_client_compagnon_fk" Type="Int32" />
+          <Property Name="id_employe_conducteur_fk" Type="Int32" />
+          <Property Name="description_equipements_speciaux_reservation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="date_heure_depart_vehicule_reservation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date_heure_retour_vehicule_reservation" Type="DateTime" Precision="3" />
+          <Property Name="lieu_depart_vehicule_reservation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lieu_retour_vehicule_reservation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="frais_conducteur_reservation" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="frais_equipements_speciaux_reservation" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="montant_forfait_reservation" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="montant_remise_reservation" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="mode_paiement_reservation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="C_row_insert_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="C_row_update_datetime" Type="DateTime" Precision="3" />
+          <Property Name="C_row_delete_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="client" Relationship="Self.FK__reservati__id_cl__412EB0B6" FromRole="reservation" ToRole="client" />
+          <NavigationProperty Name="client1" Relationship="Self.FK__reservati__id_cl__4316F928" FromRole="reservation" ToRole="client" />
+          <NavigationProperty Name="employe" Relationship="Self.FK__reservati__id_em__440B1D61" FromRole="reservation" ToRole="employe" />
+          <NavigationProperty Name="vehicule" Relationship="Self.FK__reservati__immat__4222D4EF" FromRole="reservation" ToRole="vehicule" />
+        </EntityType>
+        <EntityType Name="utilisateur">
+          <Key>
+            <PropertyRef Name="nom_utilisateur_pk" />
+          </Key>
+          <Property Name="nom_utilisateur_pk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mot_passe_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_employe_fk" Type="Int32" />
+          <Property Name="date_heure_derniere_connexion_utilisateur" Type="DateTime" Precision="3" />
+          <Property Name="C_row_insert_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="C_row_update_datetime" Type="DateTime" Precision="3" />
+          <Property Name="C_row_delete_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="employe" Relationship="Self.FK__utilisate__id_em__267ABA7A" FromRole="utilisateur" ToRole="employe" />
+        </EntityType>
+        <EntityType Name="vehicule">
+          <Key>
+            <PropertyRef Name="immatriculation_vehicule_pk" />
+          </Key>
+          <Property Name="immatriculation_vehicule_pk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="photo_vehicule" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="type_vehicule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="marque_vehicule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description_vehicule" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="distance_parcourue_vehicule" Type="Double" Nullable="false" />
+          <Property Name="type_energie_vehicule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantite_energie_vehicule" Type="Double" Nullable="false" />
+          <Property Name="prix_location_vehicule" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="date_achat_vehicule" Type="DateTime" Precision="0" />
+          <Property Name="date_derniere_maintenance_vehicule" Type="DateTime" Precision="0" />
+          <Property Name="C_row_insert_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="C_row_update_datetime" Type="DateTime" Precision="3" />
+          <Property Name="C_row_delete_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="contrats" Relationship="Self.FK__contrat__immatri__33D4B598" FromRole="vehicule" ToRole="contrat" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__immat__4222D4EF" FromRole="vehicule" ToRole="reservation" />
+        </EntityType>
+        <Association Name="FK__contrat__id_clie__32E0915F">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="id_client_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contrat__id_clie__34C8D9D1">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="id_client_compagnon_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__id_cl__412EB0B6">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="id_client_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__id_cl__4316F928">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="id_client_compagnon_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contrat__id_empl__35BCFE0A">
+          <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employe">
+              <PropertyRef Name="id_employe_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="id_employe_conducteur_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__contrat__immatri__33D4B598">
+          <End Role="vehicule" Type="Self.vehicule" Multiplicity="0..1" />
+          <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicule">
+              <PropertyRef Name="immatriculation_vehicule_pk" />
+            </Principal>
+            <Dependent Role="contrat">
+              <PropertyRef Name="immatriculation_vehicule_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__id_em__440B1D61">
+          <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employe">
+              <PropertyRef Name="id_employe_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="id_employe_conducteur_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__utilisate__id_em__267ABA7A">
+          <End Role="employe" Type="Self.employe" Multiplicity="0..1" />
+          <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employe">
+              <PropertyRef Name="id_employe_pk" />
+            </Principal>
+            <Dependent Role="utilisateur">
+              <PropertyRef Name="id_employe_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__immat__4222D4EF">
+          <End Role="vehicule" Type="Self.vehicule" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicule">
+              <PropertyRef Name="immatriculation_vehicule_pk" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="immatriculation_vehicule_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Car_Express_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="clients" EntityType="Self.client" />
+          <EntitySet Name="contrats" EntityType="Self.contrat" />
+          <EntitySet Name="employes" EntityType="Self.employe" />
+          <EntitySet Name="reservations" EntityType="Self.reservation" />
+          <EntitySet Name="utilisateurs" EntityType="Self.utilisateur" />
+          <EntitySet Name="vehicules" EntityType="Self.vehicule" />
+          <AssociationSet Name="FK__contrat__id_clie__32E0915F" Association="Self.FK__contrat__id_clie__32E0915F">
+            <End Role="client" EntitySet="clients" />
+            <End Role="contrat" EntitySet="contrats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contrat__id_clie__34C8D9D1" Association="Self.FK__contrat__id_clie__34C8D9D1">
+            <End Role="client" EntitySet="clients" />
+            <End Role="contrat" EntitySet="contrats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__id_cl__412EB0B6" Association="Self.FK__reservati__id_cl__412EB0B6">
+            <End Role="client" EntitySet="clients" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__id_cl__4316F928" Association="Self.FK__reservati__id_cl__4316F928">
+            <End Role="client" EntitySet="clients" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contrat__id_empl__35BCFE0A" Association="Self.FK__contrat__id_empl__35BCFE0A">
+            <End Role="employe" EntitySet="employes" />
+            <End Role="contrat" EntitySet="contrats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__contrat__immatri__33D4B598" Association="Self.FK__contrat__immatri__33D4B598">
+            <End Role="vehicule" EntitySet="vehicules" />
+            <End Role="contrat" EntitySet="contrats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__id_em__440B1D61" Association="Self.FK__reservati__id_em__440B1D61">
+            <End Role="employe" EntitySet="employes" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__utilisate__id_em__267ABA7A" Association="Self.FK__utilisate__id_em__267ABA7A">
+            <End Role="employe" EntitySet="employes" />
+            <End Role="utilisateur" EntitySet="utilisateurs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__immat__4222D4EF" Association="Self.FK__reservati__immat__4222D4EF">
+            <End Role="vehicule" EntitySet="vehicules" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Car_Express_Database_ModelStoreContainer" CdmEntityContainer="Car_Express_Entities">
+          <EntitySetMapping Name="clients">
+            <EntityTypeMapping TypeName="Car_Express_Database_Model.client">
+              <MappingFragment StoreEntitySet="client">
+                <ScalarProperty Name="id_client_pk" ColumnName="id_client_pk" />
+                <ScalarProperty Name="photo_client" ColumnName="photo_client" />
+                <ScalarProperty Name="nom_client" ColumnName="nom_client" />
+                <ScalarProperty Name="prenom_client" ColumnName="prenom_client" />
+                <ScalarProperty Name="nationalite_client" ColumnName="nationalite_client" />
+                <ScalarProperty Name="date_naissance_client" ColumnName="date_naissance_client" />
+                <ScalarProperty Name="lieu_naissance_client" ColumnName="lieu_naissance_client" />
+                <ScalarProperty Name="adresse_domicile_client" ColumnName="adresse_domicile_client" />
+                <ScalarProperty Name="ville_domicile_client" ColumnName="ville_domicile_client" />
+                <ScalarProperty Name="code_postal_domicile_client" ColumnName="code_postal_domicile_client" />
+                <ScalarProperty Name="adresse_residence_client" ColumnName="adresse_residence_client" />
+                <ScalarProperty Name="ville_residence_client" ColumnName="ville_residence_client" />
+                <ScalarProperty Name="code_postal_residence_client" ColumnName="code_postal_residence_client" />
+                <ScalarProperty Name="telephone_portable_client" ColumnName="telephone_portable_client" />
+                <ScalarProperty Name="telephone_fixe_client" ColumnName="telephone_fixe_client" />
+                <ScalarProperty Name="fax_client" ColumnName="fax_client" />
+                <ScalarProperty Name="email_client" ColumnName="email_client" />
+                <ScalarProperty Name="type_client" ColumnName="type_client" />
+                <ScalarProperty Name="id_national_client" ColumnName="id_national_client" />
+                <ScalarProperty Name="type_id_national_client" ColumnName="type_id_national_client" />
+                <ScalarProperty Name="date_heure_delivraison_id_national_client" ColumnName="date_heure_delivraison_id_national_client" />
+                <ScalarProperty Name="lieu_delivraison_id_national_client" ColumnName="lieu_delivraison_id_national_client" />
+                <ScalarProperty Name="id_permis_conduire_client" ColumnName="id_permis_conduire_client" />
+                <ScalarProperty Name="date_heure_delivraison_permis_client" ColumnName="date_heure_delivraison_permis_client" />
+                <ScalarProperty Name="lieu_delivraison_permis_Client" ColumnName="lieu_delivraison_permis_Client" />
+                <ScalarProperty Name="C_row_insert_datetime" ColumnName="_row_insert_datetime" />
+                <ScalarProperty Name="C_row_update_datetime" ColumnName="_row_update_datetime" />
+                <ScalarProperty Name="C_row_delete_datetime" ColumnName="_row_delete_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contrats">
+            <EntityTypeMapping TypeName="Car_Express_Database_Model.contrat">
+              <MappingFragment StoreEntitySet="contrat">
+                <ScalarProperty Name="id_contrat_pk" ColumnName="id_contrat_pk" />
+                <ScalarProperty Name="id_client_fk" ColumnName="id_client_fk" />
+                <ScalarProperty Name="immatriculation_vehicule_fk" ColumnName="immatriculation_vehicule_fk" />
+                <ScalarProperty Name="id_client_compagnon_fk" ColumnName="id_client_compagnon_fk" />
+                <ScalarProperty Name="id_employe_conducteur_fk" ColumnName="id_employe_conducteur_fk" />
+                <ScalarProperty Name="description_equipements_speciaux_contrat" ColumnName="description_equipements_speciaux_contrat" />
+                <ScalarProperty Name="date_heure_depart_vehicule_contrat" ColumnName="date_heure_depart_vehicule_contrat" />
+                <ScalarProperty Name="date_heure_retour_vehicule_contrat" ColumnName="date_heure_retour_vehicule_contrat" />
+                <ScalarProperty Name="lieu_depart_vehicule_contrat" ColumnName="lieu_depart_vehicule_contrat" />
+                <ScalarProperty Name="lieu_retour_vehicule_contrat" ColumnName="lieu_retour_vehicule_contrat" />
+                <ScalarProperty Name="frais_conducteur_contrat" ColumnName="frais_conducteur_contrat" />
+                <ScalarProperty Name="frais_equipements_speciaux_contrat" ColumnName="frais_equipements_speciaux_contrat" />
+                <ScalarProperty Name="montant_forfait_contrat" ColumnName="montant_forfait_contrat" />
+                <ScalarProperty Name="montant_remise_contrat" ColumnName="montant_remise_contrat" />
+                <ScalarProperty Name="mode_paiement_contrat" ColumnName="mode_paiement_contrat" />
+                <ScalarProperty Name="C_row_insert_datetime" ColumnName="_row_insert_datetime" />
+                <ScalarProperty Name="C_row_update_datetime" ColumnName="_row_update_datetime" />
+                <ScalarProperty Name="C_row_delete_datetime" ColumnName="_row_delete_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employes">
+            <EntityTypeMapping TypeName="Car_Express_Database_Model.employe">
+              <MappingFragment StoreEntitySet="employe">
+                <ScalarProperty Name="id_employe_pk" ColumnName="id_employe_pk" />
+                <ScalarProperty Name="photo_employe" ColumnName="photo_employe" />
+                <ScalarProperty Name="nom_employe" ColumnName="nom_employe" />
+                <ScalarProperty Name="prenom_employe" ColumnName="prenom_employe" />
+                <ScalarProperty Name="nationalite_employe" ColumnName="nationalite_employe" />
+                <ScalarProperty Name="date_naissance_employe" ColumnName="date_naissance_employe" />
+                <ScalarProperty Name="lieu_naissance_employe" ColumnName="lieu_naissance_employe" />
+                <ScalarProperty Name="adresse_domicile_employe" ColumnName="adresse_domicile_employe" />
+                <ScalarProperty Name="ville_domicile_employe" ColumnName="ville_domicile_employe" />
+                <ScalarProperty Name="code_postal_domicile_employe" ColumnName="code_postal_domicile_employe" />
+                <ScalarProperty Name="telephone_portable_employe" ColumnName="telephone_portable_employe" />
+                <ScalarProperty Name="telephone_fixe_employe" ColumnName="telephone_fixe_employe" />
+                <ScalarProperty Name="fax_employe" ColumnName="fax_employe" />
+                <ScalarProperty Name="email_employe" ColumnName="email_employe" />
+                <ScalarProperty Name="date_embauche_employe" ColumnName="date_embauche_employe" />
+                <ScalarProperty Name="fonction_employe" ColumnName="fonction_employe" />
+                <ScalarProperty Name="C_row_insert_datetime" ColumnName="_row_insert_datetime" />
+                <ScalarProperty Name="C_row_update_datetime" ColumnName="_row_update_datetime" />
+                <ScalarProperty Name="C_row_delete_datetime" ColumnName="_row_delete_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reservations">
+            <EntityTypeMapping TypeName="Car_Express_Database_Model.reservation">
+              <MappingFragment StoreEntitySet="reservation">
+                <ScalarProperty Name="id_reservation_pk" ColumnName="id_reservation_pk" />
+                <ScalarProperty Name="id_client_fk" ColumnName="id_client_fk" />
+                <ScalarProperty Name="immatriculation_vehicule_fk" ColumnName="immatriculation_vehicule_fk" />
+                <ScalarProperty Name="id_client_compagnon_fk" ColumnName="id_client_compagnon_fk" />
+                <ScalarProperty Name="id_employe_conducteur_fk" ColumnName="id_employe_conducteur_fk" />
+                <ScalarProperty Name="description_equipements_speciaux_reservation" ColumnName="description_equipements_speciaux_reservation" />
+                <ScalarProperty Name="date_heure_depart_vehicule_reservation" ColumnName="date_heure_depart_vehicule_reservation" />
+                <ScalarProperty Name="date_heure_retour_vehicule_reservation" ColumnName="date_heure_retour_vehicule_reservation" />
+                <ScalarProperty Name="lieu_depart_vehicule_reservation" ColumnName="lieu_depart_vehicule_reservation" />
+                <ScalarProperty Name="lieu_retour_vehicule_reservation" ColumnName="lieu_retour_vehicule_reservation" />
+                <ScalarProperty Name="frais_conducteur_reservation" ColumnName="frais_conducteur_reservation" />
+                <ScalarProperty Name="frais_equipements_speciaux_reservation" ColumnName="frais_equipements_speciaux_reservation" />
+                <ScalarProperty Name="montant_forfait_reservation" ColumnName="montant_forfait_reservation" />
+                <ScalarProperty Name="montant_remise_reservation" ColumnName="montant_remise_reservation" />
+                <ScalarProperty Name="mode_paiement_reservation" ColumnName="mode_paiement_reservation" />
+                <ScalarProperty Name="C_row_insert_datetime" ColumnName="_row_insert_datetime" />
+                <ScalarProperty Name="C_row_update_datetime" ColumnName="_row_update_datetime" />
+                <ScalarProperty Name="C_row_delete_datetime" ColumnName="_row_delete_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="utilisateurs">
+            <EntityTypeMapping TypeName="Car_Express_Database_Model.utilisateur">
+              <MappingFragment StoreEntitySet="utilisateur">
+                <ScalarProperty Name="nom_utilisateur_pk" ColumnName="nom_utilisateur_pk" />
+                <ScalarProperty Name="mot_passe_utilisateur" ColumnName="mot_passe_utilisateur" />
+                <ScalarProperty Name="role_utilisateur" ColumnName="role_utilisateur" />
+                <ScalarProperty Name="id_employe_fk" ColumnName="id_employe_fk" />
+                <ScalarProperty Name="date_heure_derniere_connexion_utilisateur" ColumnName="date_heure_derniere_connexion_utilisateur" />
+                <ScalarProperty Name="C_row_insert_datetime" ColumnName="_row_insert_datetime" />
+                <ScalarProperty Name="C_row_update_datetime" ColumnName="_row_update_datetime" />
+                <ScalarProperty Name="C_row_delete_datetime" ColumnName="_row_delete_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicules">
+            <EntityTypeMapping TypeName="Car_Express_Database_Model.vehicule">
+              <MappingFragment StoreEntitySet="vehicule">
+                <ScalarProperty Name="immatriculation_vehicule_pk" ColumnName="immatriculation_vehicule_pk" />
+                <ScalarProperty Name="photo_vehicule" ColumnName="photo_vehicule" />
+                <ScalarProperty Name="type_vehicule" ColumnName="type_vehicule" />
+                <ScalarProperty Name="marque_vehicule" ColumnName="marque_vehicule" />
+                <ScalarProperty Name="description_vehicule" ColumnName="description_vehicule" />
+                <ScalarProperty Name="distance_parcourue_vehicule" ColumnName="distance_parcourue_vehicule" />
+                <ScalarProperty Name="type_energie_vehicule" ColumnName="type_energie_vehicule" />
+                <ScalarProperty Name="quantite_energie_vehicule" ColumnName="quantite_energie_vehicule" />
+                <ScalarProperty Name="prix_location_vehicule" ColumnName="prix_location_vehicule" />
+                <ScalarProperty Name="date_achat_vehicule" ColumnName="date_achat_vehicule" />
+                <ScalarProperty Name="date_derniere_maintenance_vehicule" ColumnName="date_derniere_maintenance_vehicule" />
+                <ScalarProperty Name="C_row_insert_datetime" ColumnName="_row_insert_datetime" />
+                <ScalarProperty Name="C_row_update_datetime" ColumnName="_row_update_datetime" />
+                <ScalarProperty Name="C_row_delete_datetime" ColumnName="_row_delete_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,10 @@
+DevExpress.Patch.InMemoryPatch, DevExpress.Patch.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7fc7bfca2443de66
+DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraLayout.LayoutControl, DevExpress.XtraLayout.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraBars.BarManager, DevExpress.XtraBars.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Utils.MVVM.MVVMContext, DevExpress.Utils.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.PictureEdit, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraDataLayout.DataLayoutControl, DevExpress.XtraLayout.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Bars.BarManager, DevExpress.Xpf.Core.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a

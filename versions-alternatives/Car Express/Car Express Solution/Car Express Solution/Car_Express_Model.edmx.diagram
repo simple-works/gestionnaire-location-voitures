@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69f9ce154b4f4a6ea3112e374bced63b" Name="Diagram1">
+        <EntityTypeShape EntityType="Car_Express_Database_Model.client" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Car_Express_Database_Model.contrat" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Car_Express_Database_Model.employe" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Car_Express_Database_Model.reservation" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Car_Express_Database_Model.utilisateur" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Car_Express_Database_Model.vehicule" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__contrat__id_clie__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__contrat__id_clie__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__reservati__id_cl__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__reservati__id_cl__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__contrat__id_empl__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__contrat__immatri__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__reservati__id_em__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__utilisate__id_em__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="Car_Express_Database_Model.FK__reservati__immat__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

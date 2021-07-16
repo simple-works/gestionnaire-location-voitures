@@ -1,0 +1,3375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Devart (www.devart.com), Data-Generator document file -->
+<!-- Modifying this generated file will probably render it invalid -->
+<DataGenDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="4.0">
+  <Settings>
+    <Provider>aa8afe9c-7d62-4564-b477-c12e62e0f440</Provider>
+    <ConnectionString>Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=C:\USERS\AMBRATOLM\DESKTOP\CAR_RENTAL_SOLUTION\CAR_RENTAL_PROJECT\CAR_RENTAL_DATABASE.MDF;Integrated Security=True</ConnectionString>
+    <CategoryId>00000000-0000-0000-0000-000000000000</CategoryId>
+    <AllowNulls>true</AllowNulls>
+    <IncludeNullsPercent>10</IncludeNullsPercent>
+    <AllowEmptyString>false</AllowEmptyString>
+    <IncludeEmptyStringPercent>10</IncludeEmptyStringPercent>
+    <DatabaseName>C:\USERS\AMBRATOLM\DESKTOP\CAR_RENTAL_SOLUTION\CAR_RENTAL_PROJECT\CAR_RENTAL_DATABASE.MDF</DatabaseName>
+    <RowsToGenerate>1000</RowsToGenerate>
+    <GenerateUniqueValues>false</GenerateUniqueValues>
+    <TruncateTables>false</TruncateTables>
+    <DistributionMode>Seed</DistributionMode>
+    <Seed>1</Seed>
+    <LastSeedValue>0</LastSeedValue>
+  </Settings>
+  <Tables>
+    <Table Name="dbo.client">
+      <Checked>true</Checked>
+      <Settings>
+        <RowsToGenerate>100</RowsToGenerate>
+        <Truncate>false</Truncate>
+      </Settings>
+      <Columns>
+        <Column Name="id_client_pk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="photo_client">
+          <Checked>true</Checked>
+          <DataType>image</DataType>
+          <GeneratorOptions xsi:type="FilesFolderGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <IsLoop>true</IsLoop>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <Folder>.\Avatar Image</Folder>
+            <IncludeSubFolders>false</IncludeSubFolders>
+            <FilePattern>*.jpg</FilePattern>
+            <EncodingCodePage>1252</EncodingCodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlFilesFolderGenerator</GeneratorType>
+          <GeneratorName>Avatar Images</GeneratorName>
+          <GeneratorDescription>loads character images from a library</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>-1</Length>
+        </Column>
+        <Column Name="nom_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>LastNames.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>Last Name</GeneratorName>
+          <GeneratorDescription>Harter, Nicholson, Eller, Kozlowski, Bennett, Norwood, Olivarez, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="prenom_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>2</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>($"FirstNamesMale.txt")|($"FirstNamesFemale.txt")</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>First Name (any gender)</GeneratorName>
+          <GeneratorDescription>Nickolas, Agnes, Sabrina, Albert, Rozanne, Kerri, Roberta, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="nationalite_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>3</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>($"CountryCodes.csv[0]")</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Country</GeneratorName>
+          <GeneratorDescription>Belgium, United States, Japan, Ukraine, Switzerland, Georgia, Australia, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="date_naissance_client">
+          <Checked>true</Checked>
+          <DataType>date</DataType>
+          <GeneratorOptions xsi:type="BirthDateGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Retired</Category>
+                  <AgeRange>70-90</AgeRange>
+                </Value>
+                <Weight>30</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>true</Checked>
+                  <Category>Adults</Category>
+                  <AgeRange>21-70</AgeRange>
+                </Value>
+                <Weight>70</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Students</Category>
+                  <AgeRange>18-30</AgeRange>
+                </Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Teenagers</Category>
+                  <AgeRange>13-18</AgeRange>
+                </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Custom</Category>
+                  <AgeRange>0-100</AgeRange>
+                </Value>
+                <Weight>5</Weight>
+              </WeightedListItem>
+            </Values>
+          </GeneratorOptions>
+          <GeneratorType>SqlBirthDateGenerator</GeneratorType>
+          <GeneratorName>Birth Date</GeneratorName>
+          <GeneratorDescription>fill with dates of birth for different age groups, e.g. for retired persons, adults, teenagers, etc.</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>3</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="lieu_naissance_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>4</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>USCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>US City</GeneratorName>
+          <GeneratorDescription>Washington, Las Vegas, Malibu, New York, Detroit, Los Angeles, Redmond, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="adresse_domicile_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>5</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(([1-9]\d{1,2})|([1-3]\d{3})) (((New|Old|Hidden|West|South|East|North|White|Red|E|(S)?W|NW|S(E)?|N(E)?) )?((((Ski|Chapel|Hunting|Fox|Rose|Riddle|Rock|Prospect|Sharp) Hill)|Front|Hope|Mount|Church|Social|Riverside|Highland|(Wood(land|bridge|hurst|side|row|fort|cock))|((Deep|Iron|Rush|Edge|Park|Hazel|Bur|Glen|Rock|Quail|Stone|Flint|Button|Beach|Ash|Brent)wood)|Lake|(Cedar|Pine) Tree|Oak|((Water|Meadow|Farm|River|Bay)view)|Town|Market|Mountain|Monument))|((1st|2nd|3rd|[4-9]\d?th))) (St(reet)?|Ave(nue)?|Dr(ive)?|R(oa)?d|Ct|C(our)?t|Ln|Lane|Blvd|Cir(cle)?|Hwy|Highway|Loop|Way|Pkwy|Parkway), ((((1st|2nd|3rd|[4-9]\d?th) (Floor|FL))|((Appartment|APT) [1-9]\d{0,2})|((Suite|STE) [1-9]\d{0,3})|(((Nipper|Victor Executive|Diamond|Standard|Keith|Superior|Macy's|Enquirer|Duke Energy|Bartlett|Plaza|Equitable|MidAmerican|Penobscot|Guardian|Fisher|Buhl|Comcast|Calyon|First Security|257 Towers|Kearns|Judge) (Building|Bldg)))), )?($"USStateCodes.csv[2]"), (($"USStateCodes.csv[0]")|($"USStateCodes.csv[1]")), \d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>US Address Full</GeneratorName>
+          <GeneratorDescription>520 46th St, Sacramento, CA, 10265; 122 Beachwood Drive, Suite 17, Hartford, Connecticut, 31824; ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="ville_domicile_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>6</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>USCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>US City</GeneratorName>
+          <GeneratorDescription>Washington, Las Vegas, Malibu, New York, Detroit, Los Angeles, Redmond, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="code_postal_domicile_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>7</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>US Post Code (ZIP)</GeneratorName>
+          <GeneratorDescription>48470, 90189, 10265, 55078, 22067, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="adresse_residence_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(([1-9]\d{1,2})|([1-3]\d{3})) (((New|Old|Hidden|West|South|East|North|White|Red|E|(S)?W|NW|S(E)?|N(E)?) )?((((Ski|Chapel|Hunting|Fox|Rose|Riddle|Rock|Prospect|Sharp) Hill)|Front|Hope|Mount|Church|Social|Riverside|Highland|(Wood(land|bridge|hurst|side|row|fort|cock))|((Deep|Iron|Rush|Edge|Park|Hazel|Bur|Glen|Rock|Quail|Stone|Flint|Button|Beach|Ash|Brent)wood)|Lake|(Cedar|Pine) Tree|Oak|((Water|Meadow|Farm|River|Bay)view)|Town|Market|Mountain|Monument))|((1st|2nd|3rd|[4-9]\d?th))) (St(reet)?|Ave(nue)?|Dr(ive)?|R(oa)?d|Ct|C(our)?t|Ln|Lane|Blvd|Cir(cle)?|Hwy|Highway|Loop|Way|Pkwy|Parkway), ((((1st|2nd|3rd|[4-9]\d?th) (Floor|FL))|((Appartment|APT) [1-9]\d{0,2})|((Suite|STE) [1-9]\d{0,3})|(((Nipper|Victor Executive|Diamond|Standard|Keith|Superior|Macy's|Enquirer|Duke Energy|Bartlett|Plaza|Equitable|MidAmerican|Penobscot|Guardian|Fisher|Buhl|Comcast|Calyon|First Security|257 Towers|Kearns|Judge) (Building|Bldg)))), )?($"USStateCodes.csv[2]"), (($"USStateCodes.csv[0]")|($"USStateCodes.csv[1]")), \d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>US Address Full</GeneratorName>
+          <GeneratorDescription>520 46th St, Sacramento, CA, 10265; 122 Beachwood Drive, Suite 17, Hartford, Connecticut, 31824; ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="ville_residence_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>2</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>USCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>US City</GeneratorName>
+          <GeneratorDescription>Washington, Las Vegas, Malibu, New York, Detroit, Los Angeles, Redmond, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="code_postal_residence_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>3</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>US Post Code (ZIP)</GeneratorName>
+          <GeneratorDescription>48470, 90189, 10265, 55078, 22067, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="telephone_portable_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\(\D\d{2}\) \d{3}\-\d{4}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Phone Number (domestic)</GeneratorName>
+          <GeneratorDescription>(102) 136-0584, (462) 681-9028, (252) 889-1273, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="telephone_fixe_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>2</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\(\D\d{2}\) \d{3}\-\d{4}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Phone Number (domestic)</GeneratorName>
+          <GeneratorDescription>(102) 136-0584, (462) 681-9028, (252) 889-1273, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="fax_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>3</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\(\D\d{2}\) \d{3}\-\d{4}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Phone Number (domestic)</GeneratorName>
+          <GeneratorDescription>(102) 136-0584, (462) 681-9028, (252) 889-1273, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="email_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="type_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>8</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Particulier</Value>
+                <Weight>50</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Société</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="id_national_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>4</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[A-Z]\d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="type_id_national_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>5</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">CIN</Value>
+                <Weight>25</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Passeport</Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="date_heure_delivraison_id_national_client">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="lieu_delivraison_id_national_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>6</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>UKCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>UK City</GeneratorName>
+          <GeneratorDescription>Liverpool, West Bromwich, Oxford, Huddersfield, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="id_permis_conduire_client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>7</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\d{6}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="date_heure_delivraison_permis_client">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>2</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="lieu_delivraison_permis_Client">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>UKCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>UK City</GeneratorName>
+          <GeneratorDescription>Liverpool, West Bromwich, Oxford, Huddersfield, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="_row_insert_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>3</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_update_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>4</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_delete_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>100</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>5</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.employe">
+      <Checked>true</Checked>
+      <Settings>
+        <RowsToGenerate>10</RowsToGenerate>
+        <Truncate>false</Truncate>
+      </Settings>
+      <Columns>
+        <Column Name="id_employe_pk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="photo_employe">
+          <Checked>true</Checked>
+          <DataType>image</DataType>
+          <GeneratorOptions xsi:type="FilesFolderGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <IsLoop>true</IsLoop>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <Folder>.\Avatar Image</Folder>
+            <IncludeSubFolders>false</IncludeSubFolders>
+            <FilePattern>*.jpg</FilePattern>
+            <EncodingCodePage>1252</EncodingCodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlFilesFolderGenerator</GeneratorType>
+          <GeneratorName>Avatar Images</GeneratorName>
+          <GeneratorDescription>loads character images from a library</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>-1</Length>
+        </Column>
+        <Column Name="nom_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>LastNames.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>Last Name</GeneratorName>
+          <GeneratorDescription>Harter, Nicholson, Eller, Kozlowski, Bennett, Norwood, Olivarez, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="prenom_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>16</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>($"FirstNamesMale.txt")|($"FirstNamesFemale.txt")</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>First Name (any gender)</GeneratorName>
+          <GeneratorDescription>Nickolas, Agnes, Sabrina, Albert, Rozanne, Kerri, Roberta, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="nationalite_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>17</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>($"CountryCodes.csv[0]")</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Country</GeneratorName>
+          <GeneratorDescription>Belgium, United States, Japan, Ukraine, Switzerland, Georgia, Australia, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="date_naissance_employe">
+          <Checked>true</Checked>
+          <DataType>date</DataType>
+          <GeneratorOptions xsi:type="BirthDateGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Retired</Category>
+                  <AgeRange>70-90</AgeRange>
+                </Value>
+                <Weight>30</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>true</Checked>
+                  <Category>Adults</Category>
+                  <AgeRange>21-70</AgeRange>
+                </Value>
+                <Weight>70</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>true</Checked>
+                  <Category>Students</Category>
+                  <AgeRange>18-30</AgeRange>
+                </Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Teenagers</Category>
+                  <AgeRange>13-18</AgeRange>
+                </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="BirthDateItem">
+                  <Checked>false</Checked>
+                  <Category>Custom</Category>
+                  <AgeRange>0-100</AgeRange>
+                </Value>
+                <Weight>5</Weight>
+              </WeightedListItem>
+            </Values>
+          </GeneratorOptions>
+          <GeneratorType>SqlBirthDateGenerator</GeneratorType>
+          <GeneratorName>Birth Date</GeneratorName>
+          <GeneratorDescription>fill with dates of birth for different age groups, e.g. for retired persons, adults, teenagers, etc.</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>3</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="lieu_naissance_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>CACities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>CA City</GeneratorName>
+          <GeneratorDescription>Toronto, Qualicum Beach, Gander, Alexandria, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="adresse_domicile_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>19</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(([1-9]\d{1,2})|([1-3]\d{3})) (((New|Old|Hidden|West|South|East|North|White|Red|E|(S)?W|NW|S(E)?|N(E)?) )?((((Ski|Chapel|Hunting|Fox|Rose|Riddle|Rock|Prospect|Sharp) Hill)|Front|Hope|Mount|Church|Social|Riverside|Highland|(Wood(land|bridge|hurst|side|row|fort|cock))|((Deep|Iron|Rush|Edge|Park|Hazel|Bur|Glen|Rock|Quail|Stone|Flint|Button|Beach|Ash|Brent)wood)|Lake|(Cedar|Pine) Tree|Oak|((Water|Meadow|Farm|River|Bay)view)|Town|Market|Mountain|Monument))|((1st|2nd|3rd|[4-9]\d?th))) (St(reet)?|Ave(nue)?|Dr(ive)?|R(oa)?d|Ct|C(our)?t|Ln|Lane|Blvd|Cir(cle)?|Hwy|Highway|Loop|Way|Pkwy|Parkway), ((((1st|2nd|3rd|[4-9]\d?th) (Floor|FL))|((Appartment|APT) [1-9]\d{0,2})|((Suite|STE) [1-9]\d{0,3})|(((Nipper|Victor Executive|Diamond|Standard|Keith|Superior|Macy's|Enquirer|Duke Energy|Bartlett|Plaza|Equitable|MidAmerican|Penobscot|Guardian|Fisher|Buhl|Comcast|Calyon|First Security|257 Towers|Kearns|Judge) (Building|Bldg)))), )?($"USStateCodes.csv[2]"), (($"USStateCodes.csv[0]")|($"USStateCodes.csv[1]")), \d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>US Address Full</GeneratorName>
+          <GeneratorDescription>520 46th St, Sacramento, CA, 10265; 122 Beachwood Drive, Suite 17, Hartford, Connecticut, 31824; ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="ville_domicile_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>20</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>UKCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>UK City</GeneratorName>
+          <GeneratorDescription>Liverpool, West Bromwich, Oxford, Huddersfield, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="code_postal_domicile_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>21</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\d{5}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>US Post Code (ZIP)</GeneratorName>
+          <GeneratorDescription>48470, 90189, 10265, 55078, 22067, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="telephone_portable_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\(\D\d{2}\) \d{3}\-\d{4}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Phone Number (domestic)</GeneratorName>
+          <GeneratorDescription>(102) 136-0584, (462) 681-9028, (252) 889-1273, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="telephone_fixe_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>16</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\(\D\d{2}\) \d{3}\-\d{4}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Phone Number (domestic)</GeneratorName>
+          <GeneratorDescription>(102) 136-0584, (462) 681-9028, (252) 889-1273, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="fax_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>17</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>\(\D\d{2}\) \d{3}\-\d{4}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Phone Number (domestic)</GeneratorName>
+          <GeneratorDescription>(102) 136-0584, (462) 681-9028, (252) 889-1273, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="email_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="date_embauche_employe">
+          <Checked>true</Checked>
+          <DataType>date</DataType>
+          <GeneratorOptions xsi:type="DateGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>16</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateGenerator</GeneratorType>
+          <GeneratorName>date</GeneratorName>
+          <GeneratorDescription>fill with date values</GeneratorDescription>
+          <Length>3</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="fonction_employe">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>22</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>($"JobTitles.csv[0]")</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Department</GeneratorName>
+          <GeneratorDescription>Marketing, Finance, Research and Development, Manufacturing, Sales, Customer Support, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="_row_insert_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_update_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>16</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_delete_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>10</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>17</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.vehicule">
+      <Checked>true</Checked>
+      <Settings>
+        <RowsToGenerate>15</RowsToGenerate>
+        <Truncate>false</Truncate>
+      </Settings>
+      <Columns>
+        <Column Name="immatriculation_vehicule_pk">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="VINGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>true</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="VINGeneratorValueItem">
+                  <Checked>true</Checked>
+                  <CarMaker>GMC</CarMaker>
+                </Value>
+                <Weight>80</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="VINGeneratorValueItem">
+                  <Checked>true</Checked>
+                  <CarMaker>Ford</CarMaker>
+                </Value>
+                <Weight>50</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="VINGeneratorValueItem">
+                  <Checked>true</Checked>
+                  <CarMaker>Toyota</CarMaker>
+                </Value>
+                <Weight>40</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="VINGeneratorValueItem">
+                  <Checked>true</Checked>
+                  <CarMaker>Honda</CarMaker>
+                </Value>
+                <Weight>30</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="VINGeneratorValueItem">
+                  <Checked>true</Checked>
+                  <CarMaker>Nissan</CarMaker>
+                </Value>
+                <Weight>25</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="VINGeneratorValueItem">
+                  <Checked>true</Checked>
+                  <CarMaker>Hyundai</CarMaker>
+                </Value>
+                <Weight>20</Weight>
+              </WeightedListItem>
+            </Values>
+          </GeneratorOptions>
+          <GeneratorType>SqlVINGenerator</GeneratorType>
+          <GeneratorName>Vehicle Identification Number (VIN)</GeneratorName>
+          <GeneratorDescription>2G1CW57118F209458, JN8AF5MR88W523949, 1F1CP068998673718, 5N1AF5MRXDC690512, ...</GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="photo_vehicule">
+          <Checked>true</Checked>
+          <DataType>image</DataType>
+          <GeneratorOptions xsi:type="FilesFolderGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <IsLoop>true</IsLoop>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <Folder>.\Product Image</Folder>
+            <IncludeSubFolders>false</IncludeSubFolders>
+            <FilePattern>*.jpg</FilePattern>
+            <EncodingCodePage>1252</EncodingCodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlFilesFolderGenerator</GeneratorType>
+          <GeneratorName>Product Images</GeneratorName>
+          <GeneratorDescription>loads product pictures in jpg file format</GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>-1</Length>
+        </Column>
+        <Column Name="type_vehicule">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>33</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Voiture</Value>
+                <Weight>50</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Moto</Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Camionnette</Value>
+                <Weight>2</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="marque_vehicule">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>34</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Alfa Romeo </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Aston Martin </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Audi</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Bentley </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Benz </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">BMW </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Bugatti  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Cadillac </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Chevrolet </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Chrysler </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Citroën </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Corvette  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">DAF </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Dacia </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Daewoo </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Daihatsu </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Datsun </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">De Lorean </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Dino </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Dodge  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Farboud </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Ferrari </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Fiat </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Ford</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Honda </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Hummer </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Hyundai</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Jaguar </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Jeep  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">KIA </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Koenigsegg  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Lada </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Lamborghini </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Lancia </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Land Rover </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Lexus </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Ligier </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Lincoln </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Lotus  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Martini </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Maserati </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Maybach </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Mazda </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">McLaren </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Mercedes-Benz </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Mini </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Mitsubishi  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Nissan </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Noble  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Opel  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Peugeot </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Pontiac </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Porsche  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Renault </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Rolls-Royce  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Saab </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Seat </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Škoda </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Smart </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Spyker  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Subaru </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Suzuki  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Toyota  </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Vauxhall </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Volkswagen </Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Volvo</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="description_vehicule">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlLoremIpsumGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <MinLength>1</MinLength>
+            <MaxLength>99</MaxLength>
+            <MaxAllowedLength>100</MaxAllowedLength>
+            <MinWordsInSentence>2</MinWordsInSentence>
+            <MaxWordsInSentence>5</MaxWordsInSentence>
+            <MinSentences>1</MinSentences>
+            <MaxSentences>5</MaxSentences>
+            <MinParagraphs>1</MinParagraphs>
+            <MaxParagraphs>1</MaxParagraphs>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <PunctuationSigns>,.!?...;</PunctuationSigns>
+            <StartParagraphWithIndent>false</StartParagraphWithIndent>
+            <AddParagraphTags>false</AddParagraphTags>
+            <AddItalicTags>false</AddItalicTags>
+            <AddBoldTags>false</AddBoldTags>
+            <AddSingleLineBreakTags>false</AddSingleLineBreakTags>
+            <AddNewLines>false</AddNewLines>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>0</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlLoremIpsumGenerator</GeneratorType>
+          <GeneratorName>Product Description</GeneratorName>
+          <GeneratorDescription>Sunt ipsum unde minus hic. Repellenadus at facilis. Aut id harum quae! Et qui ullam., ...</GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="distance_parcourue_vehicule">
+          <Checked>true</Checked>
+          <DataType>float</DataType>
+          <GeneratorOptions xsi:type="FloatGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:double">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>10000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+            <Scale>2</Scale>
+            <Precision>13</Precision>
+          </GeneratorOptions>
+          <GeneratorType>SqlFloatGenerator</GeneratorType>
+          <GeneratorName>float</GeneratorName>
+          <GeneratorDescription>fill with floating point numeric values</GeneratorDescription>
+          <Length>8</Length>
+          <Precision>53</Precision>
+        </Column>
+        <Column Name="type_energie_vehicule">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>35</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Esscence</Value>
+                <Weight>100</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">GPL</Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Fiol</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="quantite_energie_vehicule">
+          <Checked>true</Checked>
+          <DataType>float</DataType>
+          <GeneratorOptions xsi:type="FloatGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:double">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>33</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>100</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+            <Scale>2</Scale>
+            <Precision>13</Precision>
+          </GeneratorOptions>
+          <GeneratorType>SqlFloatGenerator</GeneratorType>
+          <GeneratorName>float</GeneratorName>
+          <GeneratorDescription>fill with floating point numeric values</GeneratorDescription>
+          <Length>8</Length>
+          <Precision>53</Precision>
+        </Column>
+        <Column Name="prix_location_vehicule">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <MinValue>100</MinValue>
+            <MaxValue>5000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="date_achat_vehicule">
+          <Checked>true</Checked>
+          <DataType>date</DataType>
+          <GeneratorOptions xsi:type="DateGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateGenerator</GeneratorType>
+          <GeneratorName>date</GeneratorName>
+          <GeneratorDescription>fill with date values</GeneratorDescription>
+          <Length>3</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="date_derniere_maintenance_vehicule">
+          <Checked>true</Checked>
+          <DataType>date</DataType>
+          <GeneratorOptions xsi:type="DateGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>33</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>OffsetFromColumn</DateTimeRange>
+            <SelectedColumn>date_achat_vehicule</SelectedColumn>
+            <OffsetFromColumnMinDays>365</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>1000</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateGenerator</GeneratorType>
+          <GeneratorName>date</GeneratorName>
+          <GeneratorDescription>fill with date values</GeneratorDescription>
+          <Length>3</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="_row_insert_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>32</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_update_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>33</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_delete_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>15</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>34</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.contrat">
+      <Checked>true</Checked>
+      <Settings>
+        <RowsToGenerate>30</RowsToGenerate>
+        <Truncate>false</Truncate>
+      </Settings>
+      <Columns>
+        <Column Name="id_contrat_pk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="id_client_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="immatriculation_vehicule_fk">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>50</Length>
+        </Column>
+        <Column Name="id_client_compagnon_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="id_employe_conducteur_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="description_equipements_speciaux_contrat">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlLoremIpsumGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <MinLength>1</MinLength>
+            <MaxLength>99</MaxLength>
+            <MaxAllowedLength>100</MaxAllowedLength>
+            <MinWordsInSentence>2</MinWordsInSentence>
+            <MaxWordsInSentence>5</MaxWordsInSentence>
+            <MinSentences>1</MinSentences>
+            <MaxSentences>5</MaxSentences>
+            <MinParagraphs>1</MinParagraphs>
+            <MaxParagraphs>1</MaxParagraphs>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <PunctuationSigns>,.!?...;</PunctuationSigns>
+            <StartParagraphWithIndent>false</StartParagraphWithIndent>
+            <AddParagraphTags>false</AddParagraphTags>
+            <AddItalicTags>false</AddItalicTags>
+            <AddBoldTags>false</AddBoldTags>
+            <AddSingleLineBreakTags>false</AddSingleLineBreakTags>
+            <AddNewLines>false</AddNewLines>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>0</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlLoremIpsumGenerator</GeneratorType>
+          <GeneratorName>Product Description</GeneratorName>
+          <GeneratorDescription>Sunt ipsum unde minus hic. Repellenadus at facilis. Aut id harum quae! Et qui ullam., ...</GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="date_heure_depart_vehicule_contrat">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="date_heure_retour_vehicule_contrat">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>OffsetFromColumn</DateTimeRange>
+            <SelectedColumn>date_heure_depart_vehicule_contrat</SelectedColumn>
+            <OffsetFromColumnMinDays>1</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>60</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="lieu_depart_vehicule_contrat">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>CACities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>CA City</GeneratorName>
+          <GeneratorDescription>Toronto, Qualicum Beach, Gander, Alexandria, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="lieu_retour_vehicule_contrat">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>CACities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>CA City</GeneratorName>
+          <GeneratorDescription>Toronto, Qualicum Beach, Gander, Alexandria, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="frais_conducteur_contrat">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <MinValue>50</MinValue>
+            <MaxValue>500</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="frais_equipements_speciaux_contrat">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <MinValue>100</MinValue>
+            <MaxValue>2000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="montant_forfait_contrat">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>1000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="montant_remise_contrat">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>100</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="mode_paiement_contrat">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Expèce</Value>
+                <Weight>25</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Chèque</Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Carte</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="_row_insert_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_update_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_delete_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>30</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>14</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.reservation">
+      <Checked>true</Checked>
+      <Settings>
+        <RowsToGenerate>20</RowsToGenerate>
+        <Truncate>false</Truncate>
+      </Settings>
+      <Columns>
+        <Column Name="id_reservation_pk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="id_client_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="immatriculation_vehicule_fk">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>50</Length>
+        </Column>
+        <Column Name="id_client_compagnon_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="id_employe_conducteur_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>26</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="description_equipements_speciaux_reservation">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlLoremIpsumGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <MinLength>1</MinLength>
+            <MaxLength>99</MaxLength>
+            <MaxAllowedLength>100</MaxAllowedLength>
+            <MinWordsInSentence>2</MinWordsInSentence>
+            <MaxWordsInSentence>5</MaxWordsInSentence>
+            <MinSentences>1</MinSentences>
+            <MaxSentences>5</MaxSentences>
+            <MinParagraphs>1</MinParagraphs>
+            <MaxParagraphs>1</MaxParagraphs>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <PunctuationSigns>,.!?...;</PunctuationSigns>
+            <StartParagraphWithIndent>false</StartParagraphWithIndent>
+            <AddParagraphTags>false</AddParagraphTags>
+            <AddItalicTags>false</AddItalicTags>
+            <AddBoldTags>false</AddBoldTags>
+            <AddSingleLineBreakTags>false</AddSingleLineBreakTags>
+            <AddNewLines>false</AddNewLines>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>0</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlLoremIpsumGenerator</GeneratorType>
+          <GeneratorName>Product Description</GeneratorName>
+          <GeneratorDescription>Sunt ipsum unde minus hic. Repellenadus at facilis. Aut id harum quae! Et qui ullam., ...</GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="date_heure_depart_vehicule_reservation">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="date_heure_retour_vehicule_reservation">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>60</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>OffsetFromColumn</DateTimeRange>
+            <SelectedColumn>date_heure_depart_vehicule_reservation</SelectedColumn>
+            <OffsetFromColumnMinDays>1</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>60</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="lieu_depart_vehicule_reservation">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>USCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>US City</GeneratorName>
+          <GeneratorDescription>Washington, Las Vegas, Malibu, New York, Detroit, Los Angeles, Redmond, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="lieu_retour_vehicule_reservation">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="TextFileGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>50</NullProportion>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <IsLoop>true</IsLoop>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <FileName>USCities.txt</FileName>
+            <TrimLeft>false</TrimLeft>
+            <TrimRight>false</TrimRight>
+            <CodePage>-1</CodePage>
+          </GeneratorOptions>
+          <GeneratorType>SqlTextFileGenerator</GeneratorType>
+          <GeneratorName>US City</GeneratorName>
+          <GeneratorDescription>Washington, Las Vegas, Malibu, New York, Detroit, Los Angeles, Redmond, ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>100</Length>
+        </Column>
+        <Column Name="frais_conducteur_reservation">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <MinValue>50</MinValue>
+            <MaxValue>500</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="frais_equipements_speciaux_reservation">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <MinValue>100</MinValue>
+            <MaxValue>2000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="montant_forfait_reservation">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>1000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="montant_remise_reservation">
+          <Checked>true</Checked>
+          <DataType>money</DataType>
+          <GeneratorOptions xsi:type="MoneyGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>26</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>100</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>(0)</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MoneyGenerator</GeneratorType>
+          <GeneratorName>money</GeneratorName>
+          <GeneratorDescription>fill with monetary or currency values</GeneratorDescription>
+          <Scale>4</Scale>
+          <Length>8</Length>
+          <Precision>19</Precision>
+        </Column>
+        <Column Name="mode_paiement_reservation">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Expèce</Value>
+                <Weight>25</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Chèque</Value>
+                <Weight>15</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Carte</Value>
+                <Weight>10</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="_row_insert_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_update_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>26</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_delete_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>20</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>27</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.utilisateur">
+      <Checked>true</Checked>
+      <Settings>
+        <RowsToGenerate>5</RowsToGenerate>
+        <Truncate>false</Truncate>
+      </Settings>
+      <Columns>
+        <Column Name="nom_utilisateur_pk">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>28</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt")|($"LastNames.txt"))(\D{1,3}))|((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt")|($"LastNames.txt"))((19[5-9]\d)|(20[0-2]\d)))</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>NickName</GeneratorName>
+          <GeneratorDescription>Jodi1982, Nancey777, Terrance28, Erich95, Cindi1, Salena92, Pasquale2015, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="mot_passe_utilisateur">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>29</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9A-Z]{8}</Expression>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="role_utilisateur">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlWeightedListGeneratorSingleValuesOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <ColumnDataTypeName>varchar</ColumnDataTypeName>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <Length>50</Length>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>30</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Values>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Maitre</Value>
+                <Weight>1</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Administrateur</Value>
+                <Weight>20</Weight>
+              </WeightedListItem>
+              <WeightedListItem>
+                <Value xsi:type="xsd:string">Utilisateur</Value>
+                <Weight>79</Weight>
+              </WeightedListItem>
+            </Values>
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+          </GeneratorOptions>
+          <GeneratorType>SqlWeightedListGeneratorSingleValues</GeneratorType>
+          <GeneratorName>Weighted List (simple)</GeneratorName>
+          <GeneratorDescription>values list with specified frequency of occurrence</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="id_employe_fk">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>28</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="date_heure_derniere_connexion_utilisateur">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>28</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>OffsetFromColumn</DateTimeRange>
+            <SelectedColumn>_row_insert_datetime</SelectedColumn>
+            <OffsetFromColumnMinDays>1</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>20</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_insert_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>29</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_update_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>30</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="_row_delete_datetime">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <RowsCountToGenerate>5</RowsCountToGenerate>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>31</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <OffsetFromColumnMinTime />
+            <OffsetFromColumnMaxTime />
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2017-03-19T00:00:00+00:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <SynchronizationOptions xsi:type="DataSyncOptionGroup">
+    <SynchronizationFileName>C:\Users\Ambratolm\Desktop\Car_Rental_Manger\DataGeneration_20170319-1550.sql</SynchronizationFileName>
+    <BackupPathName>C:\Users\Ambratolm\</BackupPathName>
+  </SynchronizationOptions>
+</DataGenDocument>

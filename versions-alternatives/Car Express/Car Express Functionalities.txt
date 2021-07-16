@@ -1,0 +1,7 @@
+> Dashboard
+> Print report of a contract
+> Take photos from WebCam
+> Show search in gridviews
+> Notifications system
+> show referenced fields in same gridview
+> show cardview

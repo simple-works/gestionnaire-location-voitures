@@ -1,0 +1,16 @@
+---------------------------------------------------------
+• RCD Service
+---------------------------------------------------------
+
+nom_agence : 'RCD Service'
+description_agence : 'Rent a Car & 4x4'
+date_creation_agence : NULL
+
+adresse_agence : 'Galerie Saâda, Rue Yougoslavie N°10, Guéliz'
+ville_agence : 'Marrakech'
+code_postal_agence : '40000'
+
+telephone_agence : '(+212) 05 24 42 38 70'
+fax_agence : '(+212) 05 24 42 38 70'
+email_agence : 'rcd.service@gmail.com'
+lien_Web_agence : NULL
