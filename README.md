@@ -42,7 +42,7 @@ L’application permet au responsable d'une **petite** agence de location de vé
 - Cadriciel:
   - **[.NET](https://github.com/dotnet) Framework 4.5.2**
   - **[DevExpress](https://github.com/devexpress) 16.2** / **[WinForms](https://www.devexpress.com/products/net/controls/winforms)**
-- Database: **[SQL Server Express LocalDB](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb) 2014**
+- Base de Données: **[SQL Server Express LocalDB](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb) 2014**
 - EDI: **[Visual Studio](https://github.com/microsoft) 2015**
 
 ## :page_facing_up: License
